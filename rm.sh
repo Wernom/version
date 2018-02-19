@@ -1,6 +1,7 @@
 #!/bin/dash
 
 FIC_NAME=$(basename "$1")
+FIC_PATH=$(dirname "$1")
 
 if test ! -f "$1";then
     echo "Error : file '$FIC_NAME' does not exist"
@@ -20,7 +21,7 @@ if test "$CHOICE" = "no";then
 fi
 
 if test "$CHOICE" = "yes";then
-    for FIC in .version/$FIC_NAME*;do
+    for FIC in $FIC_PATH/.version/$FIC_NAME*;do
         rm "$FIC"
         rmdir .version 2> /dev/null
     done
