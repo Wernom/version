@@ -8,8 +8,6 @@ if test ! -f "$1";then
     exit 1
 fi
 
-
-
 while test "$CHOICE" != "no" && test "$CHOICE" != "yes";do
     echo "Are you sure you want to delete '$FIC_NAME' from versioning? (yes/no)"
     echo -n ">"
