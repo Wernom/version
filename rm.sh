@@ -24,7 +24,7 @@ if test "$CHOICE" = "yes";then
         rm "$FIC"
         rmdir .version 2> /dev/null
     done
-    echo "Eveyiting was succesfully deleted"
+    echo "Everything was succesfully deleted"
     exit 0
 fi
 
