@@ -4,14 +4,14 @@ USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add ch
 
 
 if [ $# -lt 2 ]; then
-    echo "Error: wrong number of argument" >&2
+    echo "Error: wrong number of arguments" >&2
     echo "$USAGE"
     exit 1
 fi
 
 case "$1" in
     ( "add" )
-        echo "add";;
+        echo $(./add.sh $2);;
     ( "rm" )
         echo "rm";;
     ( "commit" )
@@ -29,3 +29,4 @@ case "$1" in
         echo "$USAGE"
         exit 2;;
 esac
+
