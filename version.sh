@@ -11,13 +11,13 @@ fi
 
 case "$1" in
     ( "add" )
-    	./add.sh $2;;
+    	./add.sh "$2";;
     ( "rm" )
-        ./rm.sh $2;;
+        ./rm.sh "$2";;
     ( "commit" )
-        ./commit.sh $2;;
+        ./commit.sh "$2";;
     ( "revert" )
-        echo "revert"
+        echo "revert";;
     ( "diff" )
         echo "diff";;
     ( "checkout" )
