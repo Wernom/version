@@ -11,7 +11,7 @@ fi
 
 if test ! -f "$(basename "$1")";then
     echo "Error : file '$FIC_NAME' does not exist"
-    exit 1
+    exit 2
 fi
 
 case "$1" in
