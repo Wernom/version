@@ -19,7 +19,7 @@ fi
 NB_VERSION=0
 
 for VAR in $FIC_PATH/.version/$FIC_NAME.*;do
-	NB_VERSION=$(("$NB_VERSION"+1))
+	NB_VERSION=$(($NB_VERSION+1)) #No quote
 done
 
 NEW_VERSION=$(diff "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest)

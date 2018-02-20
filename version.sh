@@ -22,11 +22,15 @@ case "$1" in
         ./rm.sh "$2";;
     ( "commit" )
         ./commit.sh "$2";;
+    ( "ci" )
+        ./commit.sh "$2";;
     ( "revert" )
         ./revert.sh "$2";;
     ( "diff" )
         echo "diff";;
     ( "checkout" )
+        echo "checkout";;
+    ( "co" )
         echo "checkout";;
     ( "log" )
         echo "log";;
