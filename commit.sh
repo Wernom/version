@@ -29,8 +29,8 @@ if [ -z "$NEW_VERSION" ];then
 	exit 3
 fi
 
-diff $1 $FIC_PATH/.version/$FIC_NAME.latest > $FIC_PATH/.version/$FIC_NAME.$NB_VERSION
-cp $1 $FIC_PATH/.version/$FIC_NAME.latest
+diff "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest > "$FIC_PATH"/.version/"$FIC_NAME"."$NB_VERSION"
+cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest
 
 echo "Committed a new version: $NB_VERSION"
 
