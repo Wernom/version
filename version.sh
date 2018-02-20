@@ -27,11 +27,11 @@ case "$1" in
     ( "revert" )
         ./revert.sh "$2";;
     ( "diff" )
-        echo "diff";;
+        ./diff.sh "$2";;
     ( "checkout" )
-        echo "checkout";;
+        ./checkout.sh "$2" "$3";;
     ( "co" )
-        echo "checkout";;
+        ./checkout.sh "$2" "$3";;
     ( "log" )
         echo "log";;
     ( * )
