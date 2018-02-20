@@ -2,11 +2,6 @@
 
 USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
 
-if [ ! -f "$1" ];then
-	echo "The file "$1" doesn't exist"
-	exit 1
-fi
-
 FIC_NAME=$(basename "$1")
 FIC_PATH=$(dirname "$1")
 

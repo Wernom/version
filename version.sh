@@ -9,6 +9,11 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
+if test ! -f "$(basename "$1")";then
+    echo "Error : file '$FIC_NAME' does not exist"
+    exit 1
+fi
+
 case "$1" in
     ( "add" )
     	./add.sh "$2";;
@@ -17,11 +22,7 @@ case "$1" in
     ( "commit" )
         ./commit.sh "$2";;
     ( "revert" )
-<<<<<<< HEAD
-        ./revert.sh "$2";;
-=======
         echo "revert";;
->>>>>>> 57e2de1bc8119b27f1a8d2b9aeadf1d98e910642
     ( "diff" )
         echo "diff";;
     ( "checkout" )

@@ -3,11 +3,6 @@
 FIC_NAME=$(basename "$1")
 FIC_PATH=$(dirname "$1")
 
-if test ! -f "$1";then
-    echo "Error : file '$FIC_NAME' does not exist"
-    exit 1
-fi
-
 while test "$CHOICE" != "no" && test "$CHOICE" != "yes";do
     echo "Are you sure you want to delete '$FIC_NAME' from versioning? (yes/no)"
     echo -n ">"
