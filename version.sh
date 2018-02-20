@@ -17,7 +17,7 @@ case "$1" in
     ( "commit" )
         ./commit.sh $2;;
     ( "revert" )
-        echo "revert"
+        ./revert.sh "$2";;
     ( "diff" )
         echo "diff";;
     ( "checkout" )
