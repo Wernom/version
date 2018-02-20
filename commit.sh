@@ -19,11 +19,7 @@ fi
 NB_VERSION=-1
 
 for VAR in $FIC_PATH/.version/$FIC_NAME.*;do
-<<<<<<< HEAD
 	NB_VERSION=$((NB_VERSION+1)) #No quote
-=======
-	NB_VERSION=$((NB_VERSION+1))
->>>>>>> 55bda65578eaf9b511816fd2f7f85e48b4245331
 done
 
 NEW_VERSION=$(diff "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest)
@@ -33,8 +29,15 @@ if [ -z "$NEW_VERSION" ];then
 	exit 5
 fi
 
+if [ -z "$2" ];then
+	echo "Please comment"
+	exit 9
+fi
+
 diff "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest > "$FIC_PATH"/.version/"$FIC_NAME"."$NB_VERSION"
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest
+echo "$(date -R)" "$2" >> "$FIC_PATH"/.version/"$FIC_NAME".log
+
 
 echo "Committed a new version: $NB_VERSION"
 exit 0
