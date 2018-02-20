@@ -15,7 +15,8 @@ fi
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".1
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest
 
-if [ "$#" -eq 1 ];then
+#If there is no comment, we add 'Add to versioning' for the first version added
+if [ -z "$2" ];then
     echo "$(date -R)" "Add to versioning" > "$FIC_PATH"/.version/"$FIC_NAME".log
     echo "Added a new file under versioning: '$1'"
     exit 0
