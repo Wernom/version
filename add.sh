@@ -7,7 +7,7 @@ FIC_PATH=$(dirname "$1")
 mkdir "$FIC_PATH"/.version 2> /dev/null
 
 if test -f "$FIC_PATH/.version/$FIC_NAME.1"; then
-    echo "Error : File '$FIC_NAME' already exist"
+    echo "Error: File named '$FIC_NAME' has already been added"
     exit 4
 fi
 

@@ -10,7 +10,7 @@ if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".1 ];
 	exit 3
 fi
 
-test "$2" -lt 0 >&2 /dev/null
+test "$2" -lt 0 2> /dev/null
 
 if test $? -gt 1 ;then
     echo "Error : the argument must be a number"
