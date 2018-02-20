@@ -5,12 +5,12 @@ FIC_NAME=$(basename "$2")
 
 if [ $# -lt 2 ]; then
     echo "Error: wrong number of arguments" >&2
-    echo "$USAGE"
+    echo "$USAGE" >&2
     exit 1
 fi
 
 if test ! -f "$2";then
-    echo "Error: file '$FIC_NAME' does not exist"
+    echo "Error: file '$FIC_NAME' does not exist" >&2
     exit 2
 fi
 
@@ -22,7 +22,7 @@ case "$1" in
     ( "commit" )
         ./commit.sh "$2" "$3";;
     ( "ci" )
-        ./commit.sh "$2";;
+        ./commit.sh "$2" "$3";;
     ( "revert" )
         ./revert.sh "$2";;
     ( "diff" )
@@ -34,8 +34,8 @@ case "$1" in
     ( "log" )
         ./log.sh "$2";;
     ( * )
-        echo "Error: this command name does not exist : $1"
-        echo "$USAGE"
+        echo "Error: this command name does not exist : $1" >&2
+        echo "$USAGE" >&2
         exit 6;;
 esac
 

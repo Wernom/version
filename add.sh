@@ -7,11 +7,11 @@ FIC_PATH=$(dirname "$1")
 mkdir "$FIC_PATH"/.version 2> /dev/null
 
 if test -f "$FIC_PATH/.version/$FIC_NAME.1"; then
-    echo "Error: File named '$FIC_NAME' has already been added"
+    echo "Error: File named '$FIC_NAME' has already been added" >&2
     exit 4
 fi
 
-
+#Creation of 2 files: the in itiale and the latest
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".1
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest
 
