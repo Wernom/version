@@ -16,10 +16,10 @@ if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".1 ];
 	exit 3
 fi
 
-NB_VERSION=0
+NB_VERSION=-1
 
 for VAR in $FIC_PATH/.version/$FIC_NAME.*;do
-	NB_VERSION=$(($NB_VERSION+1)) #No quote
+	NB_VERSION=$((NB_VERSION+1))
 done
 
 NEW_VERSION=$(diff "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest)

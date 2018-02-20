@@ -17,11 +17,11 @@ fi
 
 case "$1" in
     ( "add" )
-    	./add.sh "$2";;
+    	./add.sh "$2" "$3";;
     ( "rm" )
         ./rm.sh "$2";;
     ( "commit" )
-        ./commit.sh "$2";;
+        ./commit.sh "$2" "$3";;
     ( "ci" )
         ./commit.sh "$2";;
     ( "revert" )

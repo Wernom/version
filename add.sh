@@ -14,9 +14,15 @@ fi
 
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".1
 cp "$1" "$FIC_PATH"/.version/"$FIC_NAME".latest
-touch "$FIC_PATH"/.version/"$FIC_NAME".log
-echo "Added a new file under versioning: '$1'"
 
+if [ "$#" -eq 1 ];then
+    echo "$(date -R)" "Add to versioning" > "$FIC_PATH"/.version/"$FIC_NAME".log
+    echo "Added a new file under versioning: '$1'"
+    exit 0
+fi
+
+echo "$(date -R)" "$2" > "$FIC_PATH"/.version/"$FIC_NAME".log
+echo "Added a new file under versioning: '$1'"
 exit 0
 
 

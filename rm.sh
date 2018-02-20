@@ -24,7 +24,7 @@ fi
 if test "$CHOICE" = "yes";then
     for FIC in "$FIC_PATH"/.version/"$FIC_NAME"*;do
         rm "$FIC"
-        rmdir .version 2> /dev/null
+        rmdir "$FIC_PATH"/.version 2> /dev/null
     done
     echo "Everything was succesfully deleted"
     exit 0
