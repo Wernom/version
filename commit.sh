@@ -3,7 +3,7 @@
 USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
 
 if [ ! -f "$1" ];then
-	echo "The file $1 doesn't exist"
+	echo "The file $1 does not exist"
 	exit 1
 fi
 
