@@ -1,8 +1,5 @@
 #!/bin/dash
 
-FIC_NAME=$(basename "$1")
-FIC_PATH=$(dirname "$1")
-
 
 mkdir "$FIC_PATH"/.version 2> /dev/null
 

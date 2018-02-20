@@ -3,6 +3,7 @@
 USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
 
 FIC_NAME=$(basename "$2")
+FIC_PATH=$(dirname "$2")
 
 if [ $# -lt 2 ]; then
     echo "Error: wrong number of arguments" >&2

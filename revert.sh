@@ -1,9 +1,6 @@
 #!/bin/dash
 
-USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
-
-FIC_NAME=$(basename "$1")
-FIC_PATH=$(dirname "$1")
+USAGE="Usage: version.sh revert file"
 
 #check if the file has already been versioned
 if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".latest ];then

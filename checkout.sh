@@ -1,8 +1,6 @@
 #!/bin/dash
 
-USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
-FIC_NAME=$(basename "$1")
-FIC_PATH=$(dirname "$1")
+USAGE="Usage: version.sh checkout file number"
 
 if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".1 ];then
 	echo "Error : the file '$FIC_NAME' is not under versioning, please use add."
@@ -10,7 +8,7 @@ if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".1 ];
 	exit 3
 fi
 
-test "$2" -lt 0 > /dev/null
+test "$2" -lt 0 >&2 /dev/null
 
 if test $? -gt 1 ;then
     echo "Error : the argument must be a number"
