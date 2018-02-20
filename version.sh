@@ -2,6 +2,7 @@
 
 USAGE="Usage: version.sh <command> file [option]\nWhere <command> can be: add checkout commit diff log revert rm"
 
+FIC_NAME=$(basename "$2")
 
 if [ $# -lt 2 ]; then
     echo "Error: wrong number of arguments" >&2
@@ -9,7 +10,7 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-if test ! -f "$(basename "$1")";then
+if test ! -f "$2";then
     echo "Error : file '$FIC_NAME' does not exist"
     exit 2
 fi
@@ -22,7 +23,7 @@ case "$1" in
     ( "commit" )
         ./commit.sh "$2";;
     ( "revert" )
-        echo "revert";;
+        ./revert.sh "$2";;
     ( "diff" )
         echo "diff";;
     ( "checkout" )
