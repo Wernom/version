@@ -32,6 +32,8 @@ case "$1" in
     ( * )
         echo "Error: this command name does not exist : $1"
         echo "$USAGE"
-        exit 2;;
+        exit 6;;
 esac
+
+exit 0
 
