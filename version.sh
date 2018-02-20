@@ -33,7 +33,7 @@ case "$1" in
     ( "co" )
         echo "checkout";;
     ( "log" )
-        echo "log";;
+        ./log.sh "$2";;
     ( * )
         echo "Error: this command name does not exist : $1"
         echo "$USAGE"
