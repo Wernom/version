@@ -1,0 +1,60 @@
+/************************************************************
+*                                                           *
+*       Explanations of the Version Management Utility      *
+*                                                           *
+*************************************************************/
+
+
+NAME
+    version - treats file versions
+
+SYNOPSIS
+    version.sh <command> file [option]
+
+COMMANDS
+    add
+        Add a new file in versioning
+        Put the comment "Add to versioning" if no comment specified
+    rm
+        Delete all versions of the file.
+    commit
+        Usage: version.sh commit file 'comment'
+        Add a new version of the file after the previous ones 
+        Add a comment to the .log file
+    revert
+        Come back to the latest version
+    diff
+        Display the difference between the file and its latest version
+    checkout
+        Usage: version.sh checkout file number
+        Return to the version filled in argument
+    log
+        Shows the date of the different versions with their comment
+
+EXIT 
+    0
+        Everything is OK
+    1
+        Wrong number of arguments  
+    2
+        The file does not exist
+    3
+        The file is not under versioning
+    4
+        The file has already been added
+    5
+        The latest version is the same as the file
+    6
+        Wrong argument
+    7
+        This version doesn't exist
+    8
+        No comment
+
+COMMENTS
+    We worked together throughout the project(side by side). 
+    We used GitHub to work on different functions simultaneously, 
+    it's more convenient than a USB key.
+
+     
+    

@@ -15,7 +15,7 @@ fi
 
 NB_VERSION=-1
 
-for VAR in $FIC_PATH/.version/$FIC_NAME.*;do
+for VAR in $FIC_PATH/Deletes all versions of the file.version/$FIC_NAME.*;do
 	NB_VERSION=$((NB_VERSION+1)) #No quote
 done
 
