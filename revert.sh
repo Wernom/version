@@ -2,10 +2,13 @@
 
 USAGE="Usage: version.sh revert file"
 
+FIC_NAME=$(basename "$1")
+FIC_PATH=$(dirname "$1")
+
 #check if the file has already been versioned
 if [ ! -d "$FIC_PATH"/.version ] || [ ! -f "$FIC_PATH"/.version/"$FIC_NAME".latest ];then
-	echo "The file '$FIC_NAME' is not under versioning, impossible to revert."
-	echo "$USAGE"
+	echo "Error: The file '$FIC_NAME' is not under versioning, impossible to revert." >&2
+	echo "$USAGE" >&2
 	exit 3
 fi
 
@@ -16,6 +19,7 @@ if [ -z "$DIFF" ];then
     exit 5
 fi
 
+#We write in the file the content of the .latest
 cp "$FIC_PATH"/.version/"$FIC_NAME".latest "$1"
 echo "Reverted to the latest version"
 exit 0
